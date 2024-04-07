@@ -1,4 +1,3 @@
-// JavaScript
 function toggleDarkMode() {
     var container = document.getElementById("container");
     container.classList.toggle("dark-mode");

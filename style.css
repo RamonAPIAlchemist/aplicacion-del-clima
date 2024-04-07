@@ -1,9 +1,8 @@
-/* Estilos CSS */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom, #71f6ff 0%, #dbdbdb 100%); /* Degradado de color */
+    background-image: linear-gradient(to bottom, #71f6ff 0%, #dbdbdb 100%);
     transition: background-color 0.5s;
     display: flex;
     justify-content: center;
@@ -11,70 +10,93 @@ body {
     height: 100vh;
 }
 
-
 .container {
-    max-width: 1000000000px; /* Aumentamos un poco el ancho máximo */
+    width: 80%; /* Ancho del contenedor en porcentaje para que sea adaptable */
+    height: 80%; /* Largo del contenedor en porcentaje */
     margin: 50px auto;
-    background-color: #61c2fa; /* Color de fondo blanco */
-    padding: 40px; /* Aumentamos el padding para hacer el contenedor más grande */
+    background-image: linear-gradient(to bottom, #0ae2f1, #09c2e8, #07a1d9); /* Degradado de colores para simular cambio de clima en modo claro */
+    padding: 20px; /* Padding para dar espacio al contenido */
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-height: calc(100vh - 100px); /* Altura máxima de la ventana menos 100px de margen en la parte superior e inferior */
+    overflow: auto; /* Agregar desplazamiento si el contenido es demasiado grande */
 }
 
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Ancho del contenedor en porcentaje para dispositivos móviles */
+    }
+}
 
 .input-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centramos los elementos verticalmente */
+    align-items: center;
     margin-bottom: 20px;
 }
 
 #cityInput {
-    width: 70%;
-    padding: 12px; /* Aumentamos el padding para una apariencia más espaciada */
-    border: 1px solid #ddd; /* Borde suave */
-    border-radius: 20px; /* Bordes redondeados */
-    margin-bottom: 10px; /* Espaciado inferior para el campo de búsqueda */
+    width: 88%; /* Aumentar el ancho */
+    padding: 14px; /* Aumentar el padding */
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin-bottom: 15px; /* Aumentar el margen inferior */
 }
 
 button {
-    background-color: #9a9e9a;
-    color: white;
-    padding: 12px 24px; /* Aumentamos el padding para hacer los botones más grandes */
+    background-color: #008fa1;
+    color: rgb(255, 255, 255);
+    padding: 12px 20px; /* Ajustar el padding horizontal */
     border: none;
     cursor: pointer;
-    border-radius: 30px; /* Hacemos los botones ovalados */
-    transition: background-color 0.3s;
+    border-radius: 20px; /* Ajustar el border-radius */
+    transition: background-color 0.3s, transform 0.2s; /* Agregar transición para el color de fondo y la transformación */
 }
 
 button:hover {
     background-color: #070707;
 }
 
+button:active {
+    transform: scale(0.95); /* Reducir ligeramente el botón al hacer clic */
+}
+
+
 #weatherInfo {
-    background-color: #c0c0c0; /* Color de fondo más claro */
-    padding: 20px;
+    background-color: #cafbff;
+    padding: 40px; /* Ajusta este valor según sea necesario */
     margin-top: 20px;
     border-radius: 10px;
 }
 
 .dark-mode {
-    background-color: #333;
-    color: #fff;
+    color: #fff; /* Cambio de color del texto en modo oscuro */
+    background-image: linear-gradient(to bottom, #333, #444, #555); /* Degradado de colores para simular cambio de clima en modo oscuro */
 }
 
 .dark-mode .container {
-    background-color: #444;
+    background-image: linear-gradient(to bottom, #555, #444, #333); /* Degradado de colores para simular cambio de clima en modo oscuro */
 }
 
 .dark-mode #weatherInfo {
-    background-color: #666;
-    color: #fff;
+    background-color: #666; /* Cambio de color de fondo en modo oscuro */
 }
 
-/* Ajuste de margen superior solo para el botón "Modo Oscuro" */
+/* Margen para el botón "Modo Oscuro" tanto en modo claro como oscuro */
 button:last-child {
-    margin-top: 20px; /* Puedes ajustar este valor según sea necesario */
+    margin-top: 40px; /* Aumenta el margen en la parte superior del botón */
 }
 
+/* Estilos para botones en modo oscuro */
+.dark-mode button {
+    background-color: #333; /* Cambia el color de fondo del botón en modo oscuro */
+    color: #fff; /* Cambia el color del texto del botón en modo oscuro */
+}
+
+/* Estilos para #cityInput en modo oscuro */
+.dark-mode #cityInput {
+    background-color: #333; /* Cambia el color de fondo del #cityInput en modo oscuro */
+    color: #fff; /* Cambia el color del texto del #cityInput en modo oscuro */
+    border: 1px solid #fff; /* Cambia el color del borde del #cityInput en modo oscuro */
+}
