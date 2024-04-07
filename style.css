@@ -1,0 +1,80 @@
+/* Estilos CSS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #71f6ff 0%, #dbdbdb 100%); /* Degradado de color */
+    transition: background-color 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    max-width: 1000000000px; /* Aumentamos un poco el ancho máximo */
+    margin: 50px auto;
+    background-color: #61c2fa; /* Color de fondo blanco */
+    padding: 40px; /* Aumentamos el padding para hacer el contenedor más grande */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos los elementos verticalmente */
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    width: 70%;
+    padding: 12px; /* Aumentamos el padding para una apariencia más espaciada */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado inferior para el campo de búsqueda */
+}
+
+button {
+    background-color: #9a9e9a;
+    color: white;
+    padding: 12px 24px; /* Aumentamos el padding para hacer los botones más grandes */
+    border: none;
+    cursor: pointer;
+    border-radius: 30px; /* Hacemos los botones ovalados */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #070707;
+}
+
+#weatherInfo {
+    background-color: #c0c0c0; /* Color de fondo más claro */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+}
+
+.dark-mode #weatherInfo {
+    background-color: #666;
+    color: #fff;
+}
+
+/* Ajuste de margen superior solo para el botón "Modo Oscuro" */
+button:last-child {
+    margin-top: 20px; /* Puedes ajustar este valor según sea necesario */
+}
+
